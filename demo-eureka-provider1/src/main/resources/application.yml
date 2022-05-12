@@ -1,0 +1,18 @@
+server:
+  port: 7002
+spring:
+  application:
+    name: eureka-provider1
+  cloud:
+    inetutils:
+      default-ip-address: 10.252.49.60
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://server1:7000/eureka/,http://server2:7001/eureka/
+  instance:
+    hostname: localhost
+    #发起续约--心跳
+    lease-renewal-interval-in-seconds: 20

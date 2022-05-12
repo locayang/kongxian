@@ -1,0 +1,17 @@
+server:
+  port: 7006
+spring:
+  application:
+    name: eureka-consumer-ceign
+    cloud:
+      circuitbreaker:
+        hystrix:
+          enabled: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: false
+    service-url:
+      defaultZone: http://server1:7000/eureka/,http://server2:7001/eureka/
+  instance:
+    hostname: localhost
